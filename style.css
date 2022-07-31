@@ -1,0 +1,107 @@
+/* created color variable for making app in standard color  */
+:root {
+    --primary: rgba(138, 96, 235, 0.60);
+    --light: rgb(218, 210, 210);
+    --grey: rgb(129, 124, 124);
+    --dark: rgb(37, 34, 34);
+    --green: rgb(40, 167, 69);
+    --blue: rgb(102, 130, 222);
+    --red: rgb(220, 53, 69);
+}
+
+/* body  */
+body {
+    font-family: Arial;
+}
+
+/* app container  */
+.container {
+    width: 90%;
+    max-width: 30rem;
+    margin: 0 auto;
+    margin-top: 14vph;
+}
+
+/* heading  */
+h1 {
+    margin-bottom: 40px;
+}
+
+/* classes for display type  */
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+/* todo list status classes */
+.finished {
+    color: var(--green);
+    text-decoration: line-through;
+}
+
+.in-progress {
+    color: var(--blue);
+}
+
+.todo {
+    color: var(--red);
+}
+
+
+
+/* input area  */
+input {
+    width: 75%;
+    bottom: 1px solid var(--light);
+    border-radius: 0.25rem;
+    outline: none;
+    padding: 10px;
+}
+
+input:focus {
+    border: 1px solid var(--primary);
+}
+
+/* button  */
+
+button {
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    width: 25%;
+    border: none;
+    color: var(--dark);
+    background: var(--primary);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* table  */
+table {
+    margin-top: 40px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table td,
+table th {
+    border: 1px solid var(--light);
+    padding: 8px;
+}
+
+table td:nth-child(2),
+table td:nth-child(3) {
+    cursor: pointer;
+}
+
+/* trash icon */
+.fa-trash {
+    color: var(--dark);
+    font-size: 18px;
+    display: table-cell !important;
+    text-align: center;
+}
+
