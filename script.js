@@ -1,15 +1,15 @@
 // for sample task of all statuses when opening app 
 let tasks = [
     {
-        taskName:"Example for finished task",
+        taskName: "Example for finished task",
         status: "Finished"
     },
     {
-        taskName:"Example for in-progress task",
+        taskName: "Example for in-progress task",
         status: "In-progress"
     },
     {
-        taskName:"Example for task todo",
+        taskName: "Example for task todo",
         status: "Todo"
     },
 ];
@@ -17,10 +17,11 @@ let tasks = [
 displayTable();
 
 
+
 // for adding task 
 function addTask() {
     // get it from input text with the help of id task using querrySelector
-    let task = document.querySelector("#task"); 
+    let task = document.querySelector("#task");
 
     // add task in tasks array using push function 
     tasks.push({
@@ -41,7 +42,7 @@ function updateStatus(index) {
     let statusIndex = statuses.indexOf(tasks[index].status);
     statusIndex++;
     // if reached the end of status array, start again from index 0
-    if(statusIndex > 2) statusIndex = 0;
+    if (statusIndex > 2) statusIndex = 0;
     // and then update it
     tasks[index].status = statuses[statusIndex];
     displayTable();
@@ -62,7 +63,7 @@ function displayTable() {
     let table = document.querySelector("table");
 
     // so that it only print final table when new element is added
-    while(table.childNodes.length > 2){
+    while (table.childNodes.length > 2) {
         table.removeChild(table.lastChild);
     }
     // for keeping index 
@@ -87,9 +88,9 @@ function displayTable() {
         deleteTask.classList.add("fa-trash");
 
         // triggering delete function when clicked on trash icon 
-        deleteTask.setAttribute("onClick", "deleteTask("+index+")");
-         // triggering updateStatus function when clicked on task current status
-        status.setAttribute("onClick", "updateStatus("+index+")");
+        deleteTask.setAttribute("onClick", "deleteTask(" + index + ")");
+        // triggering updateStatus function when clicked on task current status
+        status.setAttribute("onClick", "updateStatus(" + index + ")");
         // incrementing the index when new task is added 
         ++index;
 
@@ -101,4 +102,9 @@ function displayTable() {
 
         table.appendChild(tableRow);
     })
+
+    // for keeping count of task 
+    let num = document.getElementById("num");
+    let count = tasks.length;
+    num.innerHTML = count;
 }
